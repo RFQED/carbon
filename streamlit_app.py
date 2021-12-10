@@ -20,7 +20,7 @@ fig = px.choropleth_mapbox(
     color='phase',
     color_continuous_scale="Viridis",
     range_color=(0, 2),
-    zoom=10,
+    zoom=11,
     center = {"lat": 55.828, "lon": -4.731},
     opacity=0.2)
 
