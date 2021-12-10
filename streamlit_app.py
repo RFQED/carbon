@@ -1,6 +1,7 @@
 import plotly.express as px
 import pandas as pd
 import json
+import streamlit as st
 
 with open("geojson_suburbs.json") as response:
     suburbs = json.load(response)
