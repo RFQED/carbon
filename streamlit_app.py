@@ -21,7 +21,6 @@ fig = px.choropleth_mapbox(
     color_continuous_scale="Viridis",
     range_color=(0, 2),
     zoom=10,
-    style="outdoors",
     center = {"lat": 55.828, "lon": -4.731},
     opacity=0.2)
 
