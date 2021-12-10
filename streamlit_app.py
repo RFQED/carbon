@@ -20,9 +20,10 @@ fig = px.choropleth_mapbox(
     color='phase',
     color_continuous_scale="Viridis",
     range_color=(0, 2),
-    zoom=14, 
+    zoom=3, 
     center = {"lat": 55.828, "lon": -4.731},
     opacity=0.2)
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 st.plotly_chart(fig, use_container_width=True)
 
