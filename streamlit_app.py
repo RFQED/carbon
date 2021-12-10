@@ -16,7 +16,9 @@ with open("geojson_suburbs.json") as response:
     suburbs = json.load(response)
 
 
-df = pd.DataFrame(data={'suburb': ['a'], 'phase': ['d']})
+#df = pd.DataFrame(data={'suburb': ['a'], 'phase': ['d']})
+df = pd.DataFrame(data={'suburb': ['a', 'b'], 'phase': ['d', 'e']})
+
 
 mapbox_token='pk.eyJ1IjoicmZxZWQiLCJhIjoiY2t4MHBxZjE4MHU3NzJ2bnl3cmV6bzZodCJ9.qwxACnMntkPpdmBIa1zzug'
 px.set_mapbox_access_token(mapbox_token)
