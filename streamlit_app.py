@@ -17,16 +17,14 @@ geojsoninfo = {
   }
 }
 
-df = px.data.election()
-geo_df = gpd.GeoDataFrame.from_features(
-    px.data.election_geojson()["features"]
-).merge(df, on="district").set_index("district")
+#df = px.data.election()
+#geo_df = gpd.GeoDataFrame.from_features(
+#    px.data.election_geojson()["features"]
+#).merge(df, on="district").set_index("district")
 
 fig = px.choropleth_mapbox(geo_df,
                            #geojson=geo_df.geometry,
                            geojson=geojsoninfo,
-                           locations=geo_df.index,
-                           color="Joly",
                            center={"lat": 125.6, "lon": 10.1},
                            mapbox_style="open-street-map",
                            zoom=8.5)
