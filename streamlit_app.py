@@ -1,17 +1,12 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
 import streamlit as st
+import plotly.express as px
+import geopandas as gpd
 
 """
 # Welcome to Carbon..!
 Something. 
 """
 
-
-import plotly.express as px
-import geopandas as gpd
 
 df = px.data.election()
 geo_df = gpd.GeoDataFrame.from_features(
