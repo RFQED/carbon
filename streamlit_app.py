@@ -16,7 +16,7 @@ with open("geojson_suburbs.json") as response:
     suburbs = json.load(response)
 
 
-df = pd.DataFrame(data={'suburb': ['a', 'b'], 'phase': ['d', 'e']})
+df = pd.DataFrame(data={'suburb': ['a'], 'phase': ['d']})
 
 mapbox_token='pk.eyJ1IjoicmZxZWQiLCJhIjoiY2t4MHBxZjE4MHU3NzJ2bnl3cmV6bzZodCJ9.qwxACnMntkPpdmBIa1zzug'
 px.set_mapbox_access_token(mapbox_token)
@@ -30,7 +30,7 @@ fig = px.choropleth_mapbox(
     range_color=(0, 2),
     zoom=11,
     center = {"lat": 55.828, "lon": -4.731},
-    opacity=0.2)
+    opacity=0.95)
 
 fig.update_layout(
     mapbox = {
