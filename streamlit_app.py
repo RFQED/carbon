@@ -24,7 +24,7 @@ fig = px.choropleth_mapbox(
     center = {"lat": 55.828, "lon": -4.731},
     opacity=0.2)
 
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 
 #
