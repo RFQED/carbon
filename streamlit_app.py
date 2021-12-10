@@ -26,7 +26,7 @@ fig = px.choropleth_mapbox(
 
 fig.update_layout(
     mapbox = {
-        'style': "carbon"},
+        'style': "mapbox://styles/rfqed/ckx0prtk02gmq15mty3tlmhpu"},
     showlegend = False)
 
 fig.update_layout(height=750, margin={"r":0,"t":0,"l":0,"b":0})
