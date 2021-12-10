@@ -29,7 +29,7 @@ fig = px.choropleth_mapbox(
     color_continuous_scale="Viridis",
     range_color=(0, 2),
     zoom=11,
-    center = {"lat": 55.828, "lon": -4.731},
+    center = {"lat": 52.2540, "lon": 4.7641},
     opacity=0.2)
 
 #fig.update_layout(
