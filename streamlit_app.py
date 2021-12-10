@@ -20,6 +20,11 @@ with open("geojson_suburbs.json") as response:
 #df = pd.DataFrame(data={'suburb': ['a', 'b'], 'phase': ['d', 'e']})
 
 geojson = px.data.election_geojson()
+
+f = open("geojson.json", "a")
+f.write(geojson)
+f.close()
+
 df = px.data.election()
 
 
