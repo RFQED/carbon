@@ -20,7 +20,7 @@ fig = px.choropleth_mapbox(
     color_continuous_scale="Viridis",
     range_color=(0, 2),
     zoom=14, 
-    center = {"lat": 52.2540, "lon": 4.7641},
+    center = {"lat": 55.828, "lon": -4.731},
     opacity=0.2)
 
 st.plotly_chart(fig)
