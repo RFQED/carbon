@@ -30,12 +30,12 @@ fig = px.choropleth_mapbox(
     range_color=(0, 2),
     zoom=11,
     center = {"lat": 55.828, "lon": -4.731},
-    opacity=1)
+    opacity=0.2)
 
-fig.update_layout(
-    mapbox = {
-        'style': "mapbox://styles/rfqed/ckx0prtk02gmq15mty3tlmhpu"},
-    showlegend = False)
+#fig.update_layout(
+#    mapbox = {
+#        'style': "mapbox://styles/rfqed/ckx0prtk02gmq15mty3tlmhpu"},
+#    showlegend = False)
 
 #fig.update_mapboxes(pitch=45)
 

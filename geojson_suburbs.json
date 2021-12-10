@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
     "features": [
-        {"type": "Feature", "properties": {"suburb": "a"}, "geometry": {"type": "Polygon", "coordinates": [[[-4.749, 55.831], [-4.701, 55.812], [-4.749, 55.831]]]}, "id": "a"}
+        {"type": "Feature", "properties": {"suburb": "a"}, "geometry": {"type": "Polygon", "coordinates": [[[-4.749, 55.831], [-4.701, 55.612], [-4.749, 55.831]]]}, "id": "a"}
     ]
 }
