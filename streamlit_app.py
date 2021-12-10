@@ -5,16 +5,6 @@ import json
 with open("geojson_suburbs.json") as response:
     suburbs = json.load(response)
 
-""" geojson_suburbs.json:
-{
-    "type": "FeatureCollection", 
-    "features": [
-        {"type": "Feature", "properties": {"suburb": "a"}, "geometry": {"type": "Polygon", "coordinates": [[[4.7582, 52.2536], [4.7581, 52.2513], [4.7582, 52.2536]]]}, "id": "a"},
-        {"type": "Feature", "properties": {"suburb": "b"}, "geometry": {"type": "Polygon", "coordinates": [[[4.7582, 52.2536], [4.7666, 52.2544], [4.7582, 52.2536]]]}, "id": "b"}
-    ]
-}
-"""
-
 
 df = pd.DataFrame(data={'suburb': ['a', 'b'], 'phase': ['d', 'e']})
 
@@ -32,7 +22,8 @@ fig = px.choropleth_mapbox(
     center = {"lat": 52.2540, "lon": 4.7641},
     opacity=0.2)
 
-fig.show()
+st.plotly_chart(fig)
+
 
 #
 #
