@@ -23,7 +23,7 @@ fig = px.choropleth_mapbox(
     zoom=3, 
     center = {"lat": 55.828, "lon": -4.731},
     opacity=0.2)
-fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig.update_layout(height=750, margin={"r":0,"t":0,"l":0,"b":0})
 
 st.plotly_chart(fig, use_container_width=True)
 
