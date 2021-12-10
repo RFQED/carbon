@@ -17,7 +17,10 @@ with open("geojson_suburbs.json") as response:
 
 
 #df = pd.DataFrame(data={'suburb': ['a'], 'phase': ['d']})
-df = pd.DataFrame(data={'suburb': ['a', 'b'], 'phase': ['d', 'e']})
+#df = pd.DataFrame(data={'suburb': ['a', 'b'], 'phase': ['d', 'e']})
+
+geojson = px.data.election_geojson()
+df = px.data.election()
 
 
 mapbox_token='pk.eyJ1IjoicmZxZWQiLCJhIjoiY2t4MHBxZjE4MHU3NzJ2bnl3cmV6bzZodCJ9.qwxACnMntkPpdmBIa1zzug'
@@ -25,14 +28,26 @@ px.set_mapbox_access_token(mapbox_token)
 
 fig = px.choropleth_mapbox(
     df, 
-    geojson=suburbs, 
-    locations='suburb',
+    geojson=geojson,
+    locations='district', featureidkey="properties.district",
     color='phase',
     color_continuous_scale="Viridis",
     range_color=(0, 2),
     zoom=11,
     center = {"lat": 52.2540, "lon": 4.7641},
     opacity=1)
+
+
+#fig = px.choropleth_mapbox(
+#    df,
+#    geojson=suburbs,
+#    locations='suburb',
+#    color='phase',
+#    color_continuous_scale="Viridis",
+#    range_color=(0, 2),
+#    zoom=11,
+#    center = {"lat": 52.2540, "lon": 4.7641},
+#    opacity=1)
 
 #fig.update_layout(
 #    mapbox = {
