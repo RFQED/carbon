@@ -32,7 +32,7 @@ fig = px.choropleth_mapbox(
     range_color=(0, 2),
     zoom=11,
     center = {"lat": 52.2540, "lon": 4.7641},
-    opacity=0.2)
+    opacity=1)
 
 #fig.update_layout(
 #    mapbox = {
