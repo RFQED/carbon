@@ -4,6 +4,14 @@ import json
 import streamlit as st
 st.set_page_config(layout="wide")
 
+nw_long = 55.906
+nw_lat = -4.849
+
+se_long = 55.786
+sw_lat = -4.679
+
+
+
 with open("geojson_suburbs.json") as response:
     suburbs = json.load(response)
 

@@ -1,0 +1,6 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {"type": "Feature", "properties": {"suburb": "a"}, "geometry": {"type": "Polygon", "coordinates": [[[-4.849, 55.906], [-4.749, 52.875], [-4.849, 55.906]]]}, "id": "a"}
+    ]
+}
