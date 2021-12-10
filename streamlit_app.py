@@ -26,16 +26,23 @@ df = px.data.election()
 mapbox_token='pk.eyJ1IjoicmZxZWQiLCJhIjoiY2t4MHBxZjE4MHU3NzJ2bnl3cmV6bzZodCJ9.qwxACnMntkPpdmBIa1zzug'
 px.set_mapbox_access_token(mapbox_token)
 
-fig = px.choropleth_mapbox(
-    df, 
-    geojson=geojson,
-    locations='district', featureidkey="properties.district",
-    color='phase',
-    color_continuous_scale="Viridis",
-    range_color=(0, 2),
-    zoom=11,
-    center = {"lat": 52.2540, "lon": 4.7641},
-    opacity=1)
+fig = px.choropleth_mapbox(df, geojson=geojson, color="Bergeron",
+                           locations="district", featureidkey="properties.district",
+                           center={"lat": 45.5517, "lon": -73.7073},
+                           mapbox_style="carto-positron", zoom=9)
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+#fig.show()
+
+#fig = px.choropleth_mapbox(
+#    df, 
+#    geojson=geojson,
+#    locations='district', featureidkey="properties.district",  
+#    color='phase',
+#    color_continuous_scale="Viridis",
+#    range_color=(0, 2),
+#    zoom=11,
+#    center = {"lat": 52.2540, "lon": 4.7641},
+#    opacity=1)
 
 
 #fig = px.choropleth_mapbox(
