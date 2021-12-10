@@ -1,7 +1,6 @@
 {
     "type": "FeatureCollection",
     "features": [
-        {"type": "Feature", "properties": {"suburb": "a"}, "geometry": {"type": "Polygon", "coordinates": [[[4.7582, 52.2536], [4.7581, 52.2513], [4.7582, 52.2536]]]}, "id": "a"},
-        {"type": "Feature", "properties": {"suburb": "b"}, "geometry": {"type": "Polygon", "coordinates": [[[4.7582, 52.2536], [4.7666, 52.2544], [4.7582, 52.2536]]]}, "id": "b"}
+        {"type": "Feature", "properties": {"suburb": "a"}, "geometry": {"type": "Polygon", "coordinates": [[[-4.849, 55.906], [-4.749, 52.875], [-4.849, 55.906]]]}, "id": "a"}
     ]
 }
