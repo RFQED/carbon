@@ -29,6 +29,8 @@ fig.update_layout(
         'style': "mapbox://styles/rfqed/ckx0prtk02gmq15mty3tlmhpu"},
     showlegend = False)
 
+fig.update_mapboxes(pitch=45)
+
 fig.update_layout(height=750, margin={"r":0,"t":0,"l":0,"b":0})
 
 st.plotly_chart(fig, use_container_width=True)
