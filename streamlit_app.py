@@ -34,6 +34,23 @@ with col2:
         'Colourscale to use.',
         ('viridis','blackbody', 'rainbow', 'thermal'))
 
+
+
+col3, col4, col5 = st.columns(3)
+
+addRegionData = False
+with col3:
+    addRegionData = st.checkbox('Show Shaded Region Data', True)
+
+addPointData = False
+with col4:
+    addPointData = st.checkbox('Add Point Data')
+
+addHeatMapData = False
+with col5:
+    addHeatMapData = st.checkbox('Add Heatmap Data')
+
+
 random_lat = np.random.uniform(55.8926412, 55.7557135, 50)
 random_lon = np.random.uniform(-4.8405405, -4.554896, 50)
 random_sizes = np.random.uniform(1, 35, 50)
@@ -51,24 +68,27 @@ fig = px.choropleth_mapbox(df, geojson=geojson, color=plot_variable,
                            color_continuous_scale=plot_zscale,
                            locations="district", featureidkey="properties.district",
                            center={"lat": 55.836, "lon": -4.754},
-                           zoom=11, opacity=0.4 )
+                           zoom=10, opacity=0.5 )
 
+if addPointData:
+    fig.add_scattermapbox(lat = random_lat,
+                          lon = random_lon,
+                          mode = 'markers+text',
+                          text = random_str,
+                          below='',
+                          marker=dict(opacity=random_opacity),
+                          marker_size=random_sizes, marker_color=random_cols)
 
-fig.add_scattermapbox(lat = random_lat,
-                      lon = random_lon,
-                      mode = 'markers+text',
-                      text = random_str,
-                      below='',
-                      marker=dict(opacity=random_opacity),
-                      marker_size=random_sizes, marker_color=random_cols)
-
-fig.add_densitymapbox(lat=random_lat_heatmap, lon=random_lon_heatmap, z=random_sizes_heatmap, radius=10)
+if addHeatMapData:
+    fig.add_densitymapbox(lat=random_lat_heatmap, lon=random_lon_heatmap, z=random_sizes_heatmap, radius=7)
 
 fig.update_layout( height=750, margin={"r":0,"t":0,"l":0,"b":0}, mapbox = {
         'style': "mapbox://styles/rfqed/ckx0prtk02gmq15mty3tlmhpu"},
                    showlegend = False)
 
-fig.update_mapboxes(pitch=35)
+fig.update_mapboxes(pitch=25)
+fig.update_layout(coloraxis_colorbar=dict(yanchor="top", y=1, x=0,
+                                          ticks="outside"))
 ##
 #fig.update_layout(height=750, margin={"r":0,"t":0,"l":0,"b":0})
 
