@@ -36,10 +36,16 @@ with col2:
 
 random_lat = np.random.uniform(55.8926412, 55.7557135, 50)
 random_lon = np.random.uniform(-4.8405405, -4.554896, 50)
-random_sizes = np.random.uniform(1, 30, 50)
+random_sizes = np.random.uniform(1, 35, 50)
+random_cols = np.random.uniform(1, 1000, 50)
+random_opacity = np.random.uniform(0.25,1,50)
 random_str_options = ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega']
 random_str = random.sample(random_str_options, 50)
 
+
+random_lat_heatmap = np.random.uniform(55.850, 55.800, 500)
+random_lon_heatmap = np.random.uniform(-4.8805405, -4.76, 500)
+random_sizes_heatmap = np.random.uniform(1, 35, 500)
 
 fig = px.choropleth_mapbox(df, geojson=geojson, color=plot_variable,
                            color_continuous_scale=plot_zscale,
@@ -52,12 +58,15 @@ fig.add_scattermapbox(lat = random_lat,
                       lon = random_lon,
                       mode = 'markers+text',
                       text = random_str,
-                      below='',                 
-                      marker_size=random_sizes, marker_color='rgb(235, 0, 100)')
+                      below='',
+                      marker=dict(opacity=random_opacity),
+                      marker_size=random_sizes, marker_color=random_cols)
+
+fig.add_densitymapbox(lat=random_lat_heatmap, lon=random_lon_heatmap, z=random_sizes_heatmap, radius=10)
 
 fig.update_layout( height=750, margin={"r":0,"t":0,"l":0,"b":0}, mapbox = {
         'style': "mapbox://styles/rfqed/ckx0prtk02gmq15mty3tlmhpu"},
-    showlegend = False)
+                   showlegend = False)
 
 fig.update_mapboxes(pitch=35)
 ##
